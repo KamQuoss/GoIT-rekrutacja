@@ -1,0 +1,82 @@
+@import 'colors';
+@import 'fonts';
+@import 'breakpoints';
+@import 'mixins';
+@import 'buttons';
+@import 'reset';
+@import 'header';
+@import 'hero';
+@import 'box';
+@import 'card';
+@import 'footer';
+
+
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  &__intro {
+    color: $black;
+    @include flex-column-center;
+    padding: 46px 0;
+  }
+
+  &__aside {
+    color: $grey;
+    @include roboto-font;
+    font-size: 15px;
+    line-height: 1.6;
+    text-align: center;
+    margin: 0 auto;
+    padding: 16px 130px 40px 130px;
+    @media (max-width: $breakpoint-small) {
+      padding: 16px 75px 40px 75px;
+    }
+  }
+}
+
+.intro {
+  &__subheading {
+    @include kaushan-font;
+    font-size: 24px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  &__heading {
+    @include montserrat-font;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.2;
+    padding: 26px 0 43px 0;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: calc(50% - 30px);
+      width: 60px;
+      height: 3px;
+      background-color: $red;
+    }
+  }
+}
+
+.grid-3-col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  @media (max-width: $breakpoint-small) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: $breakpoint-xsmall) {
+    grid-template-columns: 1fr;
+  }
+
+  &--with-gap {
+    column-gap: 30px;
+    @media (max-width: $breakpoint-medium) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

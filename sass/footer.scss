@@ -1,0 +1,45 @@
+.footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid $light-grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: $breakpoint-medium) {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+    @media (max-width: $breakpoint-small) {
+      flex-direction: column-reverse;
+    }
+    &__copyright {
+      @include montserrat-font;
+      font-size: 14px;
+      color: $black;
+      &--highlight {
+        color: $red;
+      }
+    }
+    &__input-group {
+      display: flex;
+      padding: 10px 0;
+    }
+  }
+  
+  .text-input {
+    border: 1px solid $light-grey;
+    color: $grey;
+    @include roboto-font;
+    padding: 8px 16px;
+    &:focus-visible {
+      outline: none;
+      border-color: $grey;
+    }
+    &:invalid {
+      border-color: $red;
+    }
+    &::placeholder {
+      font-style: italic;
+      color: $light-grey;
+    }
+  }

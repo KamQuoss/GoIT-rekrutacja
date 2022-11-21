@@ -1,0 +1,86 @@
+@mixin button {
+  @include montserrat-font;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  color: $white;
+  cursor: pointer;
+}
+
+.button {
+  @include button;
+  &__image {
+    width: 100%;
+    height: 100%;
+    &--cart {
+      mask: url(../img/shopping-cart.svg) no-repeat center;
+    }
+    &--search {
+      mask: url(../img/magnifying-glass.svg) no-repeat center;
+    }
+    &--facebook {
+      mask: url(../img/facebook.svg) no-repeat center;
+    }
+    &--twitter {
+      mask: url(../img/twitter.svg) no-repeat center;
+    }
+    &--pinterest {
+      mask: url(../img/pinterest.svg) no-repeat center;
+    }
+    &--instagram {
+      mask: url(../img/instagram.svg) no-repeat center;
+    }
+  }
+
+  &--primary {
+    background-color: $green;
+    min-width: 160px;
+  }
+
+  &--secondary {
+    border: 1px solid $white;
+    min-width: 160px;
+  }
+
+  &--header {
+    width: 60px;
+    height: 60px;
+    .button__image {
+      background-color: $white;
+    }
+
+    &:hover {
+      & .button__image {
+        background-color: $yellow;
+      }
+    }
+  }
+
+  &--social-media {
+    background-color: $yellow;
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    border-right: 1px solid $red;
+
+    .button__image {
+      background-color: $red;
+    }
+
+    &:last-child {
+      border: none;
+    }
+
+    &:hover {
+      background-color: $red;
+      & .button__image {
+        background-color: $yellow;
+      }
+    }
+  }
+}

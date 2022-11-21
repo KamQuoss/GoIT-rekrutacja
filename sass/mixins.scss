@@ -1,0 +1,20 @@
+@mixin gradient-image($image-url) {
+  mix-blend-mode: normal;
+  background-color: $yellow;
+  background: linear-gradient(
+      change-color($color: $red, $alpha: 0.7),
+      change-color($color: $yellow, $alpha: 0.7)
+    ),
+    url($image-url);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

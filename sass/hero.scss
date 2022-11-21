@@ -1,0 +1,40 @@
+.hero {
+  height: 1000px;
+  margin-top: -80px;
+  color: $white;
+  @include gradient-image("/img/hero_image.png");
+  @include flex-column-center;
+  @media (max-width: $breakpoint-small) {
+    height: 800px;
+  }
+
+  &__subheading {
+    @include kaushan-font;
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 1.2;
+    @media (max-width: $breakpoint-medium) {
+      font-size: 0.7 * 72px;
+    }
+    @media (max-width: $breakpoint-xsmall) {
+      font-size: 0.5 * 72px;
+    }
+  }
+
+  &__heading {
+    @include montserrat-font;
+    font-size: 150px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 0.933;
+    max-width: 1000px;
+    margin: 70px 0 125px 0px;
+    @media (max-width: $breakpoint-medium) {
+      font-size: 0.55 * 150px;
+      margin: 50px 0 100px 0px;
+    }
+    @media (max-width: $breakpoint-xsmall) {
+      font-size: 0.5 * 150px;
+    }
+  }
+}

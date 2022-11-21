@@ -1,0 +1,68 @@
+.card {
+  padding: 32px 0;
+  max-width: fit-content;
+  margin: 0 auto;
+  &__figure {
+    background-color: $green;
+    position: relative;
+    &:hover .card__image {
+      transform: translate(-10px, -10px);
+      &::before {
+        opacity: 1;
+      }
+    }
+    &:hover .card__button-wrapper {
+      opacity: 1;
+    }
+  }
+
+  &__image {
+    transition: transform 600ms;
+    &::before {
+      transition: opacity 900ms;
+      display: block;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        change-color($color: $red, $alpha: 0.7),
+        change-color($color: $yellow, $alpha: 0.7)
+      );
+      opacity: 0;
+    }
+  }
+
+  &__body {
+    text-align: center;
+    padding: 30px 15px;
+  }
+
+  &__title {
+    @include montserrat-font;
+    font-size: 14px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: $black;
+    padding-bottom: 16px;
+  }
+
+  &__subtitle {
+    @include roboto-font;
+    font-size: 15px;
+    line-height: 1.6;
+    color: $grey;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  &__button-wrapper {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(calc(50% - 10px), calc(-50% - 10px));
+    opacity: 0;
+    transition: opacity 300ms 300ms;
+    display: flex;
+  }
+}
